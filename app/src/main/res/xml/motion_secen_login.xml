@@ -20,7 +20,7 @@
         </KeyAttribute>
 
         <KeyAttribute
-            motion:framePosition="1"
+            motion:framePosition="3"
             android:alpha="1"
             motion:transitionEasing="linear"
             motion:curveFit="linear"
@@ -64,6 +64,10 @@
         </KeyAttribute>
 
 
+
+
+
+
     </KeyFrameSet>
 
     </Transition>
@@ -78,6 +82,11 @@
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             motion:transitionEasing="accelerate" />
+
+
+
+
+
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">

@@ -5,10 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.RadioGroup;
 
 import com.manddprojectconsulant.steganography.Decryption.ExtractionActivity;
-import com.manddprojectconsulant.steganography.Encryption.EmbeddingActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         rg_emb_ext=findViewById(R.id.rg_emb_ext);
 
 
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(emb_ext_Id==0)
         {
-            startActivity(new Intent(MainActivity.this, EmbeddingActivity.class));
+            startActivity(new Intent(MainActivity.this, EncryptionActivity.class));
         }
         else if(emb_ext_Id==1)
         {
@@ -46,5 +47,18 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        // TODO Auto-generated method stub
+        finish();
+        super.onBackPressed();
+
+    }
+
+    public void Backpressed(View view) {
+
+        onBackPressed();
     }
 }

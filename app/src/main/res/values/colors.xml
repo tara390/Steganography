@@ -5,9 +5,9 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
+    <color name="black">#191919</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="color_grey">#032f3e</color>
+    <color name="color_grey">#06556f</color>
     <color name="colorAccent">#fa4d57</color>
-    <color name="grey">#032f3e</color>
+    <color name="transpermt">#00000000</color>
 </resources>
