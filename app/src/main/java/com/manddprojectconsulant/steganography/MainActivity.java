@@ -1,17 +1,27 @@
 package com.manddprojectconsulant.steganography;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.RadioGroup;
 
 import com.manddprojectconsulant.steganography.Decryption.ExtractionActivity;
+import com.manddprojectconsulant.steganography.EncryptionMethod.EncryptionActivity;
+
+import static android.Manifest.permission.CAMERA;
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.RECORD_AUDIO;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final int RequestPermissionCode = 7;
     RadioGroup rg_emb_ext;
 
     @Override
@@ -22,10 +32,43 @@ public class MainActivity extends AppCompatActivity {
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         rg_emb_ext=findViewById(R.id.rg_emb_ext);
 
+        if (CheckingPermissionIsEnabledOrNot()) {
+        
+        
+        
+        }else{
+
+            RequestMultiplePermission();
+        }
+        
+        
 
 
 
     }
+
+    private void RequestMultiplePermission() {
+
+        ActivityCompat.requestPermissions(MainActivity.this, new String[]
+                {
+
+                        WRITE_EXTERNAL_STORAGE
+                        ,READ_EXTERNAL_STORAGE
+                }, RequestPermissionCode);
+
+    }
+
+    private boolean CheckingPermissionIsEnabledOrNot() {
+
+        int FirstPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
+        int SecondPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(), READ_EXTERNAL_STORAGE);
+        return FirstPermissionResult == PackageManager.PERMISSION_GRANTED &&
+                SecondPermissionResult == PackageManager.PERMISSION_GRANTED ;
+
+    }
+
+
+
 
     public void nextmethod(View view) {
 
@@ -36,10 +79,12 @@ public class MainActivity extends AppCompatActivity {
         if(emb_ext_Id==0)
         {
             startActivity(new Intent(MainActivity.this, EncryptionActivity.class));
+            finish();
         }
         else if(emb_ext_Id==1)
         {
             startActivity(new Intent(MainActivity.this, ExtractionActivity.class));
+            finish();
         }
 
 

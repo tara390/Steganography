@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/transpermt"
-    tools:context=".Decryption.ExtractionActivity">
+    tools:context=".EncryptionMethod.AskActivity">
 
 
 
@@ -38,19 +38,19 @@
                 android:layout_centerInParent="true"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="@string/Decryption"
+                android:text="@string/save_share_encrypted_image"
                 android:textColor="@color/color_grey"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="RelativeOverlap" />
 
             <ImageView
-                android:id="@+id/ivdecryptbackpressed"
+                android:id="@+id/ivbackpressed"
                 android:layout_width="40dp"
                 android:layout_height="30dp"
                 android:layout_centerVertical="true"
                 android:layout_gravity="end"
-                android:onClick="backpressedDecrypt"
+                android:onClick="backpressedforsave"
                 android:layout_marginStart="5dp"
                 android:clickable="true"
                 android:focusable="true"
@@ -92,7 +92,7 @@
 
 
         <ImageView
-            android:id="@+id/ivdecryptimage"
+            android:id="@+id/ivEncryptedImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -100,48 +100,10 @@
             android:scaleType="fitXY"
             android:src="@drawable/ic_baseline_person_24" />
 
-        <TextView
-            android:id="@+id/tvBitmap"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"/>
-
 
     </LinearLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="330dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/rectanngleshap"
-        android:focusable="false"
-        android:focusableInTouchMode="true"
-        android:gravity="start"
-        android:padding="10dp"
-        ads:layout_constraintEnd_toEndOf="parent"
-        ads:layout_constraintHorizontal_bias="0.493"
-        ads:layout_constraintStart_toStartOf="parent"
-        ads:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/eddecrypttext"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:ems="1"
-            android:hint="Decrypted text.."
-            android:imeOptions="actionDone"
-            android:padding="10dp"
-            android:overScrollMode="always"
-            android:scrollbarStyle="insideInset"
-            android:scrollbars="vertical"
-            android:textSize="15sp"
-            android:inputType="textMultiLine|textEmailAddress|textImeMultiLine"
-            android:textAlignment="viewStart"
-            android:cursorVisible="false"
-            android:singleLine="false"
-            android:textStyle="italic|bold" />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         android:layout_width="0dp"
@@ -153,35 +115,32 @@
         ads:layout_constraintHorizontal_bias="0.0"
         android:padding="15dp"
         ads:layout_constraintStart_toStartOf="parent"
-        ads:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        ads:layout_constraintTop_toBottomOf="@+id/linearLayout2"
         ads:layout_constraintVertical_bias="0.1 ">
 
         <Button
-            android:id="@+id/btnopengallery"
+            android:id="@+id/btnopen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="30dp"
             android:layout_weight="1"
-            android:onClick="OpenGallery"
+            android:onClick="Share"
             android:background="@drawable/rectanngleshap"
             android:padding="10dp"
-            android:text="Open Gallery"
+            android:text="Share"
             />
 
         <Button
-            android:id="@+id/btndecrypt"
+            android:id="@+id/btnencrypt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
             android:layout_weight="1"
-            android:onClick="DecryptMethod"
+            android:onClick="Save"
             android:background="@drawable/rectanngleshap"
             android:padding="10dp"
-            android:text="@string/Decryption"
+            android:text="Save"
             />
-
-
-        <!--        android:onClick="Encryption"-->
     </LinearLayout>
 
 
