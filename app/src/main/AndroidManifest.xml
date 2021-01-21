@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.manddprojectconsulant.steganography">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -15,9 +16,8 @@
         android:supportsRtl="true"
         android:requestLegacyExternalStorage="true"
         android:theme="@style/MyTheme"
-        tools:targetApi="n">
+        >
         <activity android:name=".EncryptionMethod.AskActivity">
-
         </activity>
 
         <provider
@@ -30,17 +30,15 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-
-
         <activity
             android:name=".EncryptionMethod.EncryptionActivity"
             android:windowSoftInputMode="adjustPan"></activity>
+
         <activity android:name=".Decryption.ExtractionActivity" />
         <activity android:name=".SplashScreen"
             android:stateNotNeeded="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

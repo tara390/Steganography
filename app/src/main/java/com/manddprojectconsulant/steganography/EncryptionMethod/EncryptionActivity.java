@@ -54,7 +54,6 @@ public class EncryptionActivity extends Activity {
                 /*BitmapDrawable drawable = (BitmapDrawable) ivOriginal.getDrawable();
                 Bitmap bitmap = drawable.getBitmap();*/
 
-
                 String edtext = edwritetext.getText().toString();
                 StegoPVD pvd = new PVDColor();
                 BitmapDrawable d = (BitmapDrawable) ivOriginal.getDrawable();
@@ -90,6 +89,8 @@ public class EncryptionActivity extends Activity {
         if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
 
             Uri fullPhotoUri = data.getData();
+            int extention = String.valueOf(fullPhotoUri).lastIndexOf(".");
+            String ss = String.valueOf(fullPhotoUri).substring(extention);
             ivOriginal.setImageURI(fullPhotoUri);
         }
     }

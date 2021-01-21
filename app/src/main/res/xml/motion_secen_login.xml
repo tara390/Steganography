@@ -41,6 +41,7 @@
                 motion:customIntegerValue="0" />
         </KeyAttribute>
 
+
         <KeyAttribute
             motion:framePosition="1"
             android:alpha="1"

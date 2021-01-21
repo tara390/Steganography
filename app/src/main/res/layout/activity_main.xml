@@ -90,7 +90,6 @@
         android:layout_marginBottom="32dp"
         android:background="@drawable/rectanngleshap"
         android:drawableEnd="@drawable/ic_baseline_navigate_next_24"
-        android:onClick="nextmethod"
         android:text="Next"
         android:textAlignment="center"
         android:textColor="@color/purple_200"

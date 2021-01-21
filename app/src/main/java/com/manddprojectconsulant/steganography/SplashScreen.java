@@ -36,7 +36,6 @@ public class SplashScreen extends AppCompatActivity {
             public void onTransitionStarted(MotionLayout motionLayout, int i, int i1) {
 
             }
-
             @Override
             public void onTransitionChange(MotionLayout motionLayout, int i, int i1, float v) {
 

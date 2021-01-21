@@ -148,13 +148,21 @@ public class AskActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         Toast toast = Toast.makeText(AskActivity.this, "Save is Done !!", Toast.LENGTH_SHORT);
+
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show();
 
+        refreshGallary(myDir);
         Intent i=new Intent(AskActivity.this,MainActivity.class);
         startActivity(i);
         finish();
 
 
+    }
+
+
+    private void refreshGallary(File file)
+    { Intent i=new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+        i.setData(Uri.fromFile(file)); sendBroadcast(i);
     }
 }
